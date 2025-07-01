@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { TooltipPortal } from "@radix-ui/react-tooltip";
-import { ArrowLeftFromLine } from "lucide-react";
+import { ArrowLeftFromLine, GithubIcon, InstagramIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
@@ -126,8 +126,22 @@ export default function AppMenu({
                     <div ref={containerRef} className="flex flex-1 flex-col gap-4 w-full pt-3 px-2 border-t border-neutral-200 dark:border-neutral-900 overflow-hidden overflow-y-auto">
                         <ChatList chats={chats.chats} />
                     </div>
-                    <div className="flex gap-4 items-center w-full p-2">
-                        <ModeToggle />
+                    <div className="flex flex-col gap-2">
+                        <span className="text-md font-semibold">
+                            <Link className="flex gap-1 items-center px-5" href="https://github.com/thecloakdev/prizmsol-client" target="_blank">
+                                <GithubIcon size={15} />
+                                <span>Open source Code</span>
+                            </Link>
+                        </span>
+                        <div className="flex gap-4 items-center w-full p-2">
+                            <ModeToggle />
+                            <Link href="https://www.instagram.com/ahmedabdihd" target="_blank">
+                                <InstagramIcon size={15} />
+                            </Link>
+                            <Link href="https://github.com/ahmedahmed" target="_blank">
+                                <GithubIcon size={15} />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </SimpleBar>
