@@ -1,0 +1,6 @@
+{
+  "extends": "next",
+  "env": {
+    "jest/globals": true
+  }
+}

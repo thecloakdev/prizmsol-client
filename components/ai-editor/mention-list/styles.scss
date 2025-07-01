@@ -1,0 +1,18 @@
+.tiptap {
+  :first-child {
+    margin-top: 0;
+  }
+
+  .mention {
+    background-color: var(--purple-bg);
+    border: 1px solid var(--purple-border);
+    border-radius: 0.4rem;
+    box-decoration-break: clone;
+    color: var(--purple-text);
+    font-weight: bold;
+    padding: 0.1rem 0.3rem;
+    &::after {
+      content: "\200B";
+    }
+  }
+}
