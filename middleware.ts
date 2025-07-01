@@ -1,4 +1,4 @@
-import { NextResponse, type NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getValidSubdomain } from './lib/subdomain';
 
 const PUBLIC_FILE = /\.(.*)$/; // Files
@@ -17,4 +17,6 @@ export async function middleware(request: NextRequest) {
         url.pathname = `/site/${subdomain}${url.pathname}`;
         return NextResponse.rewrite(url);
     }
+
+    return NextResponse.rewrite(url);
 }
