@@ -23,7 +23,6 @@ export default async function CreateCollection() {
             const result = await saveCollection({
                 name,
                 description,
-                userId: user.id as string
             });
 
             revalidatePath("/", "layout");

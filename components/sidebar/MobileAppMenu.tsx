@@ -10,20 +10,17 @@ import { ArrowRightFromLine } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SimpleBar from "simplebar-react";
-import AccountMenu from "../AccountMenu";
 import LogoIcon from "../logoIcon";
 import SimpleTooltip from "../simple-tooltip";
 import { appMenuItems, loggedOutMenuItems } from "./constants";
 export default function MobileAppMenu({
-    user,
     onClickHandler,
 }: {
     onClickHandler: () => void;
-    user: any;
 }) {
     const pathname = usePathname();
 
-    const isLoggedOut = !user;
+    const isLoggedOut = false;
 
     const menuItems = !isLoggedOut ? appMenuItems : loggedOutMenuItems;
 
@@ -41,9 +38,6 @@ export default function MobileAppMenu({
         return (
             <li className={cn(
                 `flex flex-1 w-full justify-start items-center z-40`,
-                {
-                    "hidden": newChat && !user,
-                }
             )} key={index}>
                 <Tooltip>
                     <TooltipTrigger asChild>
@@ -112,11 +106,6 @@ export default function MobileAppMenu({
                             {menuItems.map(renderItem)}
                         </ul>
                     </div>
-                    {!isLoggedOut && (
-                        <div className="flex gap-4 mx-1 py-2 items-center w-full">
-                            <AccountMenu user={user} showName={false} />
-                        </div>
-                    )}
                 </div>
             </SimpleBar>
         </div>

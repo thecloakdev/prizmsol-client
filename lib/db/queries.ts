@@ -313,11 +313,9 @@ export async function GetLike({
 }
 
 export async function saveCollection({
-    userId,
     name,
     description
 }: {
-    userId: string;
     name: string;
     description: string;
 }) {
