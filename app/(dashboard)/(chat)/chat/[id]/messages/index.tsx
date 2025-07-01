@@ -7,14 +7,12 @@ import Message from "./message";
 
 function PureMessages({
     artifactData,
-    user,
     messages,
     status,
     isToolbarOpen = false,
     isLoading,
 }: {
     artifactData: Array<ArtifactData>;
-    user: any;
     messages: Array<Msg>;
     status: "streaming" | "ready" | "error" | "submitted";
     isToolbarOpen: boolean;
@@ -41,7 +39,6 @@ function PureMessages({
                         <Message
                             key={index}
                             artifactData={artifactData}
-                            user={user}
                             message={message}
                             isLoading={isLoading}
                             status={status}

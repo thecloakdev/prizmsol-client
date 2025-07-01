@@ -2,7 +2,7 @@ import { ArtifactData } from "@/components/artifact";
 import { Markdown } from "@/components/markdown";
 import ProxyImage from "@/components/ProxyImage";
 import SimpleTooltip from "@/components/simple-tooltip";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useArtifact } from "@/hooks/use-artifact";
 import { cn } from "@/lib/utils";
@@ -16,13 +16,11 @@ import { useEffect } from "react";
 
 export default function Message({
     artifactData,
-    user,
     message,
     isLoading,
     status
 }: {
     artifactData: Array<ArtifactData>;
-    user: any;
     message: Msg;
     isLoading: boolean;
     status: "streaming" | "ready" | "error" | "submitted";
@@ -197,11 +195,7 @@ export default function Message({
             <div className="flex gap-3 w-full">
                 {message.role == "user" && <div className="flex items-center justify-center w-7 h-7">
                     <Avatar className="flex justify-center items-center bg-neutral-800 dark:bg-neutral-300 h-[32px] w-[32px]">
-                        {user?.user_metadata?.photo ? (
-                            <AvatarImage src={user?.imageUrl} className="flex h-[32px] w-[32px]" />
-                        ) : (
-                            <span className="text-sm font-bold text-neutral-50 dark:text-neutral-800">{getInitials(user?.user_metadata?.name)}</span>
-                        )}
+                        <span className="text-sm font-bold text-neutral-50 dark:text-neutral-800">AA</span>
                     </Avatar>
                 </div>}
                 <div className="flex flex-col space-y-4 flex-wrap w-full">

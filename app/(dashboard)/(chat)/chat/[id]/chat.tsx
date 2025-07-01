@@ -15,12 +15,10 @@ import SidebarTitle from "./sidebar-title";
 export default function Chat({
     messages: msgs,
     project,
-    user,
     messagesCount
 }: {
     messages: Array<Message>;
     project: any;
-    user: any;
     messagesCount: number;
 }) {
     const router = useRouter();
@@ -107,7 +105,6 @@ export default function Chat({
                         />
                         <div className="flex flex-col mx-auto w-full">
                             <Messages
-                                user={user}
                                 messages={messages}
                                 artifactData={initialArtifact}
                                 status={status}
@@ -129,7 +126,6 @@ export default function Chat({
                                 clearOnSubmit={true}
                                 projectId={project.id}
                                 messagesCount={messagesCount}
-                                user={user}
                             />
                             <span className="text-xs text-neutral-500 text-center mt-1">Prizmsol can make mistakes. Please double check responses.</span>
                         </div>
