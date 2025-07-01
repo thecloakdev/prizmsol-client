@@ -13,7 +13,7 @@ export async function middleware(request: NextRequest) {
 
     const host = request.headers.get("host") as string;
     const subdomain = getValidSubdomain(host);
-    if (subdomain && subdomain !== "www" && subdomain !== "prizmsol") {
+    if (subdomain && subdomain !== "www" && subdomain !== "prizmsol-client") {
         url.pathname = `/site/${subdomain}${url.pathname}`;
         return NextResponse.rewrite(url);
     }
