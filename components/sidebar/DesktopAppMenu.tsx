@@ -130,7 +130,7 @@ export default function AppMenu({
                         <span className="text-md font-semibold">
                             <Link className="flex gap-1 items-center px-5" href="https://github.com/thecloakdev/prizmsol-client" target="_blank">
                                 <GithubIcon size={15} />
-                                <span>Open source Code</span>
+                                <span>View Code</span>
                             </Link>
                         </span>
                         <div className="flex gap-4 items-center w-full p-2">
